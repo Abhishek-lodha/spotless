@@ -55,9 +55,6 @@ final class ImportSorter {
 		while (scanner.hasNext()) {
 			line++;
 			String next = scanner.nextLine();
-			if (next == null) {
-				break;
-			}
 			//Since we have no AST, we only consider the most common use cases.
 			isMultiLineComment |= next.contains("/*");
 			if (isMultiLineComment && next.contains("*/")) {
@@ -113,9 +110,6 @@ final class ImportSorter {
 		while (scanner.hasNext()) {
 			curentLine++;
 			String next = scanner.nextLine();
-			if (next == null) {
-				break;
-			}
 			if (curentLine >= firstImportLine && curentLine <= lastImportLine) {
 				if (!importsAlreadyAppended) {
 					for (String string : strings) {
